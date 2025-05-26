@@ -43,13 +43,3 @@ cursor.execute("CREATE INDEX IF NOT EXISTS idx_articles_author_id ON articles(au
 cursor.execute("CREATE INDEX IF NOT EXISTS idx_articles_magazine_id ON articles(magazine_id)")
 connection.commit()
 
-#INSERT DATA
-def insert_author(name)
-    try:
-        cursor.execute("""
-                 INSERT INTO users(name)
-                    VALUES(?,?)      
-                           """,(name))
-        connection.commit()
-    except sqlite3.IntegrityError:
-        print(f"Error: the name: {name} is already in use")
