@@ -2,7 +2,7 @@ import sqlite3
 
 connection=sqlite3.connect("Articles.db")
 
-class articles:
+class article:
     def __init__(self, Title):
         self.Title=Title
         self.validate_Title()
